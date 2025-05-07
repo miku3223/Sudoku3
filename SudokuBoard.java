@@ -133,25 +133,27 @@ public class SudokuBoard {
 
     //The method to solve the board
     public boolean solve() {
+        //base case
         if (!isValid()) {
             return false;
         }
         if (isSolved()) {
             return true;
         }
-
+        //recusive case
         for (int col = 0; col < board.length; col++) {
             for (int row = 0; row < board[0].length; row++) {
                 if (board[row][col] == ' ' || board[row][col] == '.' || board[row][col] == '0') {
                     for (char val = '1'; val <= '9'; val++) {
+                        //forward
                         board[row][col] = val;
-                        if (!solve()) {
-                            board[row][col] = '.';
-                            break;
-                        }else if(isValid()){
-                            solve();
-                            ;
+                        //try solve
+                        if(solve()) {
+                            return true;
                         }
+                        //backward
+                        board[row][col] = '.';
+
                     }
                 }
 
