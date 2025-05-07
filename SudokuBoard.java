@@ -129,7 +129,20 @@ public class SudokuBoard {
       return true;
    }
 
-   
+   //The method to solve the board
+   public boolean solve(){
+      if(!isValid()){
+         return false;
+      }else if(isSolved()){
+         return true;
+      }
+
+
+
+
+
+      return false;
+   }
 
    public String toString() {
       StringBuilder output = new StringBuilder("┏━━━┯━━━┯━━━┳━━━┯━━━┯━━━┳━━━┯━━━┯━━━┓\n");
