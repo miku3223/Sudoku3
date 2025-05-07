@@ -135,7 +135,22 @@ public class SudokuBoard {
          return false;
       }else if(isSolved()){
          return true;
-      }
+      } else if(solve()){
+         for (int col = 0; col < board.length ; col++) {
+             for (int row = 0; row < board[0].length; row++) {
+                  if(board[row][col]==' ' || board[row][col] =='.' || board[row][col]=='0'){
+                        for(int i = 1; i <= 9; i++){
+                           board[row][col] = (char)i;
+                        }
+                     }
+                     
+                  }
+               }
+         }
+         
+//          else if(!solve()){
+//              board[row][col] =' ';
+//          }
 
 
 

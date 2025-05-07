@@ -5,7 +5,8 @@ public class SudokuEngine {
 
    public static void main(String[] args) {
       try {
-         SudokuBoard myBoard = new SudokuBoard("boards/valid-complete.sdk");
+         SudokuBoard myBoard = new SudokuBoard("boards/valid-incomplete.sdk");
+         System.out.print(myBoard.solve());
          System.out.println(myBoard);
          System.out.println(myBoard.isSolved());
 
@@ -14,8 +15,17 @@ public class SudokuEngine {
       }
    }
 }
-
-/* Sample output of pretty board
+/*
+53..7....
+6..195...
+.98....6.
+8...6...3
+4..8.3..1
+7...2...6
+.6....28.
+...419..5
+....8..79
+ Sample output of pretty board
  
   ----jGRASP exec: java SudokuEngine
  ┏━━━┯━━━┯━━━┳━━━┯━━━┯━━━┳━━━┯━━━┯━━━┓
